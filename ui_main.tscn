@@ -1,0 +1,54 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scripts/ui_main.gd" type="Script" id=1]
+
+[sub_resource type="DynamicFontData" id=1]
+font_path = "res://fonts/segoescb.ttf"
+
+[sub_resource type="DynamicFont" id=2]
+size = 40
+outline_color = Color( 0.454902, 0.0313726, 0.0313726, 1 )
+font_data = SubResource( 1 )
+
+[node name="Main" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 256.0
+margin_top = 64.0
+margin_right = 747.0
+margin_bottom = 128.0
+custom_fonts/font = SubResource( 2 )
+text = "Welcome to the Game"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Start" type="Button" parent="."]
+margin_left = 432.0
+margin_top = 208.0
+margin_right = 599.0
+margin_bottom = 239.0
+text = "Start"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Quit" type="Button" parent="."]
+margin_left = 432.0
+margin_top = 288.0
+margin_right = 601.0
+margin_bottom = 318.0
+text = "Quit"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="Start" to="." method="_on_Start_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_Quit_pressed"]
