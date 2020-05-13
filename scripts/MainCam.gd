@@ -10,7 +10,6 @@ func _process(delta):
 	var boy_pos = $"../Boy".get_global_transform().get_origin()
 	boy_pos = get_transform().inverse() * boy_pos
 	
-	$'../UI/Debug'.text += 'Boy in %s' % boy_pos
 	if boy_pos.x > get_viewport_rect().size.x and not lerping:
 		quad.x += 1
 		lerping = true

@@ -14,8 +14,10 @@ func get_input():
 	velocity.x = 0
 	if Input.is_action_pressed('right'):
 		velocity.x += speed
+		$BoySprite.scale.x = abs($BoySprite.scale.x)
 	if Input.is_action_pressed('left'):
 		velocity.x -= speed
+		$BoySprite.scale.x = - abs($BoySprite.scale.x)
 	if Input.is_action_just_pressed('jump') and is_on_floor():
 		velocity.y -= jump_speed
 
@@ -23,6 +25,7 @@ func _process(_delta):
 	if Input.is_action_just_released('shoot'):
 		var new_bullet = bullet_scene.instance()
 		new_bullet.global_position = global_position
+		new_bullet.dir = $BoySprite.scale.normalized().x
 		new_bullet.connect('enemy_hit', self, '_on_enemy_hit')
 		$'../bullets'.add_child(new_bullet)
 

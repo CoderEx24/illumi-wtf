@@ -1,22 +1,30 @@
 extends Node
 
-var lopes = 0 setget _set_lopes, _get_lopes
+signal health_changed(old, new)
+signal score_changed(old, new)
+signal niwtfit_changed(old, new)
+signal bullets_changed(old, new)
+signal lives_changed(old, new)
+
+var niwtfit = 0 setget _set_niwtfit, _get_niwtfit
 var health = 100 setget _set_health, _get_health
 var lives = 4 setget _set_lives, _get_lives
-var level = 1 setget _set_level, _get_level
+var level = 0 setget _set_level, _get_level
 var has_key = false setget _set_has_key, _get_has_key
 var is_game_over = false setget _set_is_game_over, _get_is_game_over
 
 func _ready():
 	pass
 
-func _set_lopes(val):
-	lopes = val
+func _set_niwtfit(val):
+	niwtfit = val
 	
-func _get_lopes():
-	return lopes
+func _get_niwtfit():
+	return niwtfit
 	
 func _set_health(val):
+	print('new health value: %d' % val)
+	emit_signal('health_changed', health, val)
 	health = val
 	if health == 0:
 		lives -= 1
@@ -42,7 +50,7 @@ func _get_is_game_over():
 	
 func _set_level(val):
 	if level != val:
-		pass #get_tree().change_scene('res://2d/levels/level_' + str(val) + '.tscn')
+		get_tree().change_scene('res://2d/levels/level_' + str(val) + '.tscn')
 	level = val
 
 func _get_level():

@@ -20,6 +20,14 @@ config/description="this is my first game using the godot game engine, it is jus
 run/main_scene="res://ui_main.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Game="*res://scripts/game.gd"
+
+[display]
+
+window/size/resizable=false
+
 [input]
 
 up={
