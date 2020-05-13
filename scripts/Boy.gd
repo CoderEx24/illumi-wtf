@@ -22,17 +22,14 @@ func get_input():
 		velocity.y -= jump_speed
 
 func _process(_delta):
-	if Input.is_action_just_released('shoot'):
+	if Input.is_action_just_released('shoot') and Game.bullets > 0:
 		var new_bullet = bullet_scene.instance()
 		new_bullet.global_position = global_position
 		new_bullet.dir = $BoySprite.scale.normalized().x
-		new_bullet.connect('enemy_hit', self, '_on_enemy_hit')
-		$'../bullets'.add_child(new_bullet)
+		$'../Bullets'.add_child(new_bullet)
+		Game.bullets -= 1
 
 func _physics_process(delta):
 	velocity.y += GRAVITY * delta
 	get_input()
 	velocity = move_and_slide(velocity, Vector2(0, -1))
-	
-func _on_enemy_hit():
-	print('enemy hit haaaay')

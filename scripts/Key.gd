@@ -9,4 +9,5 @@ func _on_Key_body_entered(body):
 		return
 	
 	Game.has_key = true
+	Game.score += 500
 	queue_free()

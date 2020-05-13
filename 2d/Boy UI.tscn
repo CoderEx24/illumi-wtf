@@ -1,12 +1,16 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://res/blox_font.tres" type="DynamicFont" id=1]
 [ext_resource path="res://scripts/Boy UI.gd" type="Script" id=2]
 [ext_resource path="res://imgs/heart.png" type="Texture" id=3]
+[ext_resource path="res://imgs/niwtfit.png" type="Texture" id=4]
+[ext_resource path="res://imgs/key.png" type="Texture" id=5]
 
 [node name="UI" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_top = 1.29236
+margin_bottom = 1.29236
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -14,52 +18,90 @@ __meta__ = {
 
 [node name="Health Bar" type="ColorRect" parent="."]
 anchor_bottom = 0.027
-margin_left = 144.0
-margin_top = 32.0
-margin_right = 864.0
-margin_bottom = 47.8
+margin_left = 136.0
+margin_top = 14.7076
+margin_right = 856.0
+margin_bottom = 16.5076
 color = Color( 0.0705882, 0.988235, 0.0196078, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="bullet Bar" type="ColorRect" parent="."]
-margin_left = 16.0
-margin_top = 80.0
-margin_right = 320.0
-margin_bottom = 96.0
+margin_left = 136.0
+margin_top = 46.7076
+margin_right = 440.0
+margin_bottom = 62.7076
 color = Color( 0, 0.133333, 1, 1 )
 
 [node name="Score" type="Label" parent="."]
-margin_left = 336.0
-margin_top = 80.0
-margin_right = 720.0
-margin_bottom = 112.0
+margin_left = 48.0
+margin_top = 86.7076
+margin_right = 432.0
+margin_bottom = 126.708
 custom_fonts/font = ExtResource( 1 )
+text = "o"
 valign = 1
 uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="Niwtfit" type="Label" parent="."]
-margin_left = 32.0
-margin_top = 112.0
-margin_right = 320.0
-margin_bottom = 144.0
+[node name="Niwtfit" type="Control" parent="."]
+margin_left = 448.0
+margin_top = 86.7076
+margin_right = 488.0
+margin_bottom = 126.708
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Count" type="Label" parent="Niwtfit"]
+margin_left = 56.0
+margin_right = 344.0
+margin_bottom = 40.0
+custom_fonts/font = ExtResource( 1 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Niwtfit icon" type="Sprite" parent="Niwtfit"]
+position = Vector2( 20, 20 )
+scale = Vector2( 0.625, 0.625 )
+texture = ExtResource( 4 )
 
 [node name="Lives" type="Control" parent="."]
-margin_left = 16.0
-margin_top = 32.0
-margin_right = 56.0
-margin_bottom = 72.0
+margin_left = 31.0
+margin_top = 30.0
+margin_right = 71.0
+margin_bottom = 70.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Count" type="Label" parent="Lives"]
-margin_left = 64.0
-margin_top = 16.0
-margin_right = 104.0
-margin_bottom = 30.0
+margin_left = 61.0
+margin_top = 8.0
+margin_right = 101.0
+margin_bottom = 22.0
+custom_fonts/font = ExtResource( 1 )
 text = "0"
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Heart Icon" type="TextureRect" parent="Lives"]
-margin_top = -16.0
-margin_right = 64.0
-margin_bottom = 48.0
+margin_left = 1.0
+margin_top = -22.0
+margin_right = 65.0
+margin_bottom = 42.0
 texture = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Key" type="Sprite" parent="."]
+position = Vector2( 468, 58.7076 )
+scale = Vector2( 0.625, 0.625 )
+texture = ExtResource( 5 )

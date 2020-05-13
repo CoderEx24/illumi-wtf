@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scripts/MainCam.gd" type="Script" id=1]
+[ext_resource path="res://2d/Boy UI.tscn" type="PackedScene" id=2]
 [ext_resource path="res://2d/Boy.tscn" type="PackedScene" id=3]
 [ext_resource path="res://res/tileset.tres" type="TileSet" id=4]
 [ext_resource path="res://2d/Enemy.tscn" type="PackedScene" id=5]
@@ -18,15 +19,16 @@ __meta__ = {
 }
 
 [node name="Tutorial Prompts" type="Control" parent="."]
+margin_left = -2.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="1" type="Label" parent="Tutorial Prompts"]
-margin_left = 160.0
-margin_top = 96.0
-margin_right = 672.0
-margin_bottom = 160.0
+margin_left = 157.841
+margin_top = 247.093
+margin_right = 669.841
+margin_bottom = 330.093
 custom_fonts/font = ExtResource( 6 )
 text = "Move with arrows or WASD
 Use space to jump"
@@ -37,9 +39,9 @@ __meta__ = {
 
 [node name="2" type="Label" parent="Tutorial Prompts"]
 margin_left = 1152.0
-margin_top = 80.0
-margin_right = 1592.0
-margin_bottom = 163.0
+margin_top = 202.738
+margin_right = 1672.0
+margin_bottom = 371.738
 custom_fonts/font = ExtResource( 6 )
 text = "Use x to shoot enemies
 
@@ -50,10 +52,10 @@ __meta__ = {
 }
 
 [node name="3" type="Label" parent="Tutorial Prompts"]
-margin_left = 2320.0
-margin_top = 64.0
-margin_right = 2800.0
-margin_bottom = 256.0
+margin_left = 2314.42
+margin_top = 223.002
+margin_right = 2794.42
+margin_bottom = 415.002
 custom_fonts/font = ExtResource( 6 )
 text = "This is 
 ummm
@@ -64,10 +66,10 @@ __meta__ = {
 }
 
 [node name="4" type="Label" parent="Tutorial Prompts"]
-margin_left = 3136.0
-margin_top = 16.0
-margin_right = 4036.0
-margin_bottom = 336.0
+margin_left = 3102.53
+margin_top = 233.582
+margin_right = 4002.53
+margin_bottom = 553.582
 custom_fonts/font = ExtResource( 6 )
 text = "This is a key obviously
 you need it to go to the next level
@@ -77,10 +79,10 @@ __meta__ = {
 }
 
 [node name="5" type="Label" parent="Tutorial Prompts"]
-margin_left = 4320.0
-margin_top = 32.0
-margin_right = 4768.0
-margin_bottom = 128.0
+margin_left = 4261.42
+margin_top = 249.582
+margin_right = 4709.42
+margin_bottom = 345.582
 custom_fonts/font = ExtResource( 6 )
 text = "this is the portal
 obviously"
@@ -107,7 +109,7 @@ position = Vector2( 4928, 352 )
 [node name="Enemy" parent="Enemies" instance=ExtResource( 5 )]
 position = Vector2( 1888, 192 )
 
-[node name="bullets" type="Node" parent="."]
+[node name="Bullets" type="Node" parent="."]
 
 [node name="Invisable wall" type="StaticBody2D" parent="."]
 position = Vector2( -48, 192 )
@@ -127,3 +129,7 @@ position = Vector2( 2800, 192 )
 [node name="Boy" parent="." instance=ExtResource( 3 )]
 position = Vector2( 336, 224 )
 jump_speed = 500
+
+[node name="UI Layer" type="CanvasLayer" parent="."]
+
+[node name="UI" parent="UI Layer" instance=ExtResource( 2 )]

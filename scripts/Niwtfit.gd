@@ -10,4 +10,5 @@ func _on_Niwtfit_body_entered(body):
 		return
 	
 	Game.niwtfit += 1
+	Game.score += 100
 	queue_free()
